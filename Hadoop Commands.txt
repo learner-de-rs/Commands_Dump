@@ -1,0 +1,34 @@
+																				HADOOP
+
+Starting and Stopping HDFS:
+1.hadoop namenode -format
+2.start-dfs.sh
+3.stop-dfs.sh
+
+Leave Safe mode:
+1.Hdfs dfsadmin –safemode leave
+
+Listing Files in hadoop:
+1.hadoop fs -ls / hdfs dfs -ls
+
+Inserting data:
+1.hdfs fs -mkdir "path" "newdirname"
+2.hdfs fs -put "edge path" "hadoop path"
+
+Retrieving Data from HDFS:
+1.hdfs fs -get "hadoop path" "edge path"
+
+Append File:
+hdfs fs -appendToFile "edge path" "hdfs path"
+
+Copy from edge to hdfs:
+hadoop fs -copyFromLocal <Local File Path/Edge path> <HDFS file path>
+
+Remove Directories with files:
+hdfs fs -rmr "path"
+
+Disk Usage:
+hadoop fs -du <HDFS file path>
+
+Finding Files:
+hadoop fs -find <HDFS directory path> <Expression>

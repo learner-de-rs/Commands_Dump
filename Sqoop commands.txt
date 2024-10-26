@@ -1,0 +1,30 @@
+																					SQOOP
+Main command:
+sqoop import –connect jdbc:mysql://<hostname>:<portno>/<database> –username <username> --password  <password> --table <table_name> --m 1 –target-dir <Hadoop_targetdirectory>
+
+Where command:
+sqoop import –connect jdbc:mysql://<hostname>:<portno>/<database> –username <username> --password  <password> --table <table_name> --where “column_name=’value’ ” --m 1 –target-dir <Hadoop_targetdirectory>
+
+Query command:
+sqoop import –connect jdbc:mysql://<hostname>:<portno>/<database> –username <username> --password  <password> --table <table_name> --query “sql query where condition and \$CONDITIONS” --m 1 –target-dir <Hadoop_targetdirectory>
+
+Incremental append command [For Incremental Load]:
+sqoop import --connect jdbc:mysql://localhost/<database>--username root --password cloudera --table <table_name> --m 1 --target-dir <Hadoop_path> --incremental append --check-column <column_name> --last-value <lastvalue of the column name in database>
+
+Incremental append command automation:
+
+Exporting table to different file formats:
+	Sequence file - after sqoop statement –as-sequencefile
+	Parquet file - after sqoop statement –as-parquetfile
+	Avro file – after sqoop statement –as-avrodatafile
+
+Sqoop Export from hdfs to mysql:
+Sqoop export –connect jdbc:mysql://localhost/<database> --m 1 –table <table_name> --export-dir “directory path” –input-fields-terminated-by ‘\001’ –username <username> --password <password>
+
+
+
+
+
+
+
+  
